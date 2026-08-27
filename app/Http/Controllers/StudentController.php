@@ -22,6 +22,7 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+        // Validate student registration data
         $validated = $request->validate([
             'student_id' => 'required|string|max:50|unique:students,student_id',
             'first_name' => 'required|string|max:100',
