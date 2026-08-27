@@ -36,7 +36,7 @@ class StudentController extends Controller
             'program' => 'required|string',
             'year_level' => 'required|string',
             'address' => 'required|string',
-
+// Upload and store the student's profile picture
             'profile_picture' => [
                 'required',
                 'image',
