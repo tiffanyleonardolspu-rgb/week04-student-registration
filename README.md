@@ -1,59 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Student Registration System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## ITST 302 – Client-Server Technologies
+### Week 4 Laboratory Activity – Mini Project 03
 
-## About Laravel
+A Laravel-based Student Registration System developed for the Week 4 laboratory activity. The system allows students to submit their personal and academic information, validates the submitted data, uploads a profile picture, stores student records in MySQL, and displays the registered student profile.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 1. Introduction
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Student registration systems are commonly used by universities and other organizations to collect, manage, and store user information digitally. Instead of relying on paper-based registration, an online registration system allows information to be submitted and processed more efficiently.
 
-## Learning Laravel
+This project demonstrates the development of a Student Registration System using Laravel. The application provides a responsive registration form where users can enter their student information, academic details, address, and profile picture.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Data validation is important because it prevents incomplete, incorrect, or invalid information from being stored in the database. Server-side validation provides an additional layer of protection because submitted information is checked by the Laravel application before it is saved.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Registration systems are also important in enterprise applications because organizations need reliable and structured data. Universities, companies, hospitals, banks, and government agencies use similar systems to collect and manage information.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 2. Objectives
 
-### Premium Partners
+The objectives accomplished during this activity are:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Develop a responsive registration form using Blade templates.
+- Process client requests using Laravel controllers.
+- Implement server-side validation.
+- Apply required and unique validation rules.
+- Validate email and numeric fields.
+- Validate uploaded profile pictures.
+- Store uploaded images using Laravel Storage.
+- Store student information in a MySQL database.
+- Display flash success messages.
+- Display validation error messages.
+- Display registered student information.
+- Implement student record viewing and deletion.
+- Understand the Laravel request lifecycle.
+- Practice Git and GitHub version control.
+- Document the development process using Markdown.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 3. Technologies Used
 
-## Code of Conduct
+- Laravel
+- PHP
+- MySQL / MariaDB
+- Blade Templates
+- Bootstrap
+- HTML
+- CSS
+- JavaScript
+- Git
+- GitHub
+- XAMPP
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 4. Laravel Request Lifecycle
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The registration request follows the Laravel request lifecycle:
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```text
+User / Browser
+      |
+      v
+Registration Form
+      |
+      v
+Laravel Route
+      |
+      v
+StudentController
+      |
+      v
+Request Validation
+      |
+   +--+--+
+   |     |
+ Invalid  Valid
+   |     |
+   v     v
+Display  Student Model
+Errors      |
+            v
+        MySQL Database
+            |
+            v
+     Profile Picture Storage
+            |
+            v
+      Redirect / Response
+            |
+            v
+     Student Profile Page
