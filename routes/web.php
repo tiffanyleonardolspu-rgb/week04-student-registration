@@ -3,6 +3,8 @@
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
+// Student registration routes
+
 Route::get('/', function () {
     return redirect()->route('students.create');
 });
