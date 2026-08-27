@@ -42,8 +42,12 @@ class StudentController extends Controller
                 'image',
                 'mimes:jpg,jpeg,png',
                 'max:2048',
+                
             ],
+            
         ]);
+
+        
 
         if ($request->hasFile('profile_picture')) {
 
